@@ -14,6 +14,7 @@ const Navbar = () => {
   
   return (
     <header className='h-[84px] flex gap-5 justify-between mt-5'>
+      <Link href='/'>
       <div className='w-[154px] h-[24px] flex'>
         <svg width="35" height="24" viewBox="0 0 35 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.7863 13.1341L13.3954 22.3669L8.00448 13.1341H18.7863ZM20.2305 12.3088H6.55444L13.3954 24L20.2305 12.3088Z" fill="#263238" />
@@ -36,14 +37,15 @@ const Navbar = () => {
 
 
       </div>
-      <div className='flex items-center gap-3 w-[588px] h-[24px]'>
+      </Link>
+      <div className='flex items-center  w-[588px] h-[24px] space-x-7'>
         {navLinks.map((link) => (
           <Link className='text-gray-900 font-semibold mt-3' key={link.label} href={link.path}>{link.label}</Link>
         ))}
 
       </div>
       <div className='h-[40px] w-[182px] flex gap-3 m-3'>
-        <Button className='text-primary' variant="ghost">Login</Button>
+        <Button className='text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in' variant="ghost">Login</Button>
         <Button className='rounded-md px-3 py-2 hover:bg-primary/50 transition-all ease-in-out text-white'>Sign up</Button>
 
       </div>

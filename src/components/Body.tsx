@@ -7,7 +7,7 @@ import CommunityUpdates from './CommunityUpdates'
 
 const Body = () => {
   return (
-    <section className='bg-gray-200'>
+    <section className='container'>
         <Unlock />
         <Achievements />
         <Calender />
