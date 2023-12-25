@@ -58,8 +58,8 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className='h-[92px] w-[300px]  mt-[-80px] space-y-5 flex flex-col'>
-          <h2 className='text-white font-bold'>Stay up to date</h2>
+        <div className='h-[92px] w-[300px]  font-bold  mt-[-80px] space-y-5 flex flex-col'>
+          <h2 className='text-gray-300'>Stay up to date</h2>
           <Input placeholder='Enter your email' />
         </div>
       </div>

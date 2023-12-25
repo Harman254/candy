@@ -4,14 +4,16 @@ import Achievements from './Achievements'
 import Calender from './Calender'
 import Customers from './Customers'
 import CommunityUpdates from './CommunityUpdates'
+import SectionTitle from './SectionTitle'
 
 const Body = () => {
   return (
-    <section className='container'>
+    <section>
         <Unlock />
         <Achievements />
         <Calender />
         <Customers />
+        <SectionTitle />
         <CommunityUpdates />
         
     </section>

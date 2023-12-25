@@ -1,22 +1,28 @@
+"use client"
 import Link from 'next/link';
-import React from 'react'
-import { Button, buttonVariants } from '../../ @/components/ui/button';
+import { useState } from 'react';
+
+import { Button } from '../../ @/components/ui/button';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/Service', label: 'Service' },
+    { path: '/services', label: 'Services' },
     { path: '/products', label: 'Products' },
-    { path: '/feature', label: 'Feature' },
-    { path: '/testimonial', label: 'Testimonial' },
-    { path: '/faq', label: 'FAQ' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
   ];
-  
+
   return (
-    <header className='h-[84px] flex gap-5 justify-between mt-5'>
-      <Link href='/'>
-      <div className='w-[154px] h-[24px] flex'>
-        <svg width="35" height="24" viewBox="0 0 35 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <nav className="bg-white shadow-md">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-between items-center">
+          <div className=" items-center py-4 px-2">
+        <Link  className="flex" href="/">
+
+          <svg width="35" height="24" viewBox="0 0 35 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.7863 13.1341L13.3954 22.3669L8.00448 13.1341H18.7863ZM20.2305 12.3088H6.55444L13.3954 24L20.2305 12.3088Z" fill="#263238" />
           <path d="M28.1591 1.65038L33.55 10.8833H22.7681L28.1591 1.65038ZM28.1591 0L21.3181 11.6912H35L28.1591 0Z" fill="#263238" />
           <path d="M0 0L5.7359 10.3409L12.0038 0.259661L0 0Z" fill="#4CAF4F" />
@@ -34,23 +40,77 @@ const Navbar = () => {
           <path d="M89.9062 12.203V21.0326H85.6704V5.75985H89.7074V8.45446H89.8864C90.2244 7.5662 90.7912 6.86355 91.5866 6.3465C92.3821 5.82283 93.3466 5.56099 94.4801 5.56099C95.5407 5.56099 96.4654 5.793 97.2543 6.25701C98.0431 6.72103 98.6562 7.38391 99.0938 8.24565C99.5312 9.10076 99.75 10.1216 99.75 11.3082V21.0326H95.5142V12.0638C95.5208 11.1292 95.2822 10.4 94.7983 9.87633C94.3144 9.34603 93.6482 9.08088 92.7997 9.08088C92.2296 9.08088 91.7258 9.20351 91.2883 9.44878C90.8575 9.69404 90.5194 10.052 90.2741 10.5226C90.0355 10.9867 89.9129 11.5468 89.9062 12.203Z" fill="#263238" />
           <path d="M111.212 5.75985V8.94167H102.015V5.75985H111.212ZM104.103 2.10076H108.338V16.3394C108.338 16.7305 108.398 17.0354 108.517 17.2542C108.637 17.4663 108.802 17.6154 109.015 17.7016C109.233 17.7878 109.485 17.8309 109.77 17.8309C109.969 17.8309 110.168 17.8143 110.367 17.7812C110.566 17.7414 110.718 17.7116 110.824 17.6917L111.49 20.8437C111.278 20.91 110.98 20.9862 110.596 21.0724C110.211 21.1652 109.744 21.2215 109.194 21.2414C108.173 21.2812 107.278 21.1453 106.509 20.8337C105.747 20.5222 105.153 20.0383 104.729 19.382C104.305 18.7258 104.096 17.8972 104.103 16.8962V2.10076Z" fill="#263238" />
         </svg>
+        </Link>
+          </div>
 
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex items-center space-x-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.path}
+                className="py-4 px-2 text-gray-900 font-semibold hover:text-primary transition duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
 
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <button
+              className="outline-none mobile-menu-button"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <svg
+                className="w-6 h-6 text-gray-900 hover:text-primary"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+
+          {/* Auth Links */}
+          <div className="hidden space-x-4 md:flex">
+            <Button variant="outline" className='hover:bg-primary hover:text-white transition-all duration-300 ease-in-out'>Log In</Button>
+            <Button className='text-white hover:bg-primary/70'>Sign Up</Button>
+          </div>
+        </div>
+
+        {/* Mobile Menu open: "block", Menu closed: "hidden" */}
+        <div
+          className={`${
+            isMenuOpen ? 'flex flex-col gap-4' : 'hidden'
+          } md:hidden p-4 mt-4 border border-gray-100 rounded-lg`}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.path}
+              className="text-gray-900 text-sm font-semibold hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          <div className="mt-4 flex flex-col gap-4">
+            <Button variant="outline" onClick={() => setIsMenuOpen(false)}>
+              Log In
+            </Button>
+
+            <Button onClick={() => setIsMenuOpen(false)}>Sign Up</Button>
+          </div>
+        </div>
       </div>
-      </Link>
-      <div className='flex items-center  w-[588px] h-[24px] space-x-7'>
-        {navLinks.map((link) => (
-          <Link className='text-gray-900 font-semibold mt-3' key={link.label} href={link.path}>{link.label}</Link>
-        ))}
+    </nav>
+  );
+};
 
-      </div>
-      <div className='h-[40px] w-[182px] flex gap-3 m-3'>
-        <Button className='text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in' variant="ghost">Login</Button>
-        <Button className='rounded-md px-3 py-2 hover:bg-primary/50 transition-all ease-in-out text-white'>Sign up</Button>
-
-      </div>
-    </header>
-  )
-}
-
-export default Navbar
+export default Navbar;
