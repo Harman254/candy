@@ -1,12 +1,15 @@
 import Image from 'next/image';
 import React from 'react';
 import { Button } from '../../ @/components/ui/button';
+import { AspectRatio } from '../../ @/components/ui/aspect-ratio';
 
 const Calender = () => {
   return (
     <section className='py-10 px-4 md:px-10 lg:px-20 xl:px-32 mt-20 flex flex-col-reverse md:flex-row items-center gap-6'>
       <div className='w-full md:w-[441px]'>
-        <Image src="/pic_3.jpg" width={441} height={433} alt='' />
+      <AspectRatio ratio={5 / 3}>
+    <Image src="/pic_3.jpg" alt="Image" width={433} height={433} className="rounded-md object-cover" />
+  </AspectRatio>
       </div>
       <div className='w-full md:w-[661px] flex flex-col items-start space-y-7'>
         <h1 className='text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-center md:text-left'>

@@ -3,12 +3,15 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { AspectRatio } from '../../ @/components/ui/aspect-ratio';
 
 const Customers = () => {
   return (
     <section className='py-10 px-4 md:px-10 lg:px-20 xl:px-32 flex flex-col md:flex-row items-center gap-10'>
       <div className='w-full md:w-[320px] h-[320px] mb-6 md:mb-0'>
-        <Image src="/pic_5.jpg" width={320} height={320} alt='' />
+      <AspectRatio ratio={5 / 3}>
+    <Image src="/pic_5.jpg" alt="Image" width={320} height={320} className="rounded-md object-cover" />
+  </AspectRatio>
       </div>
       <div className='w-full md:w-[748px] flex flex-col justify-center'>
         <div className='h-[244px] justify-center flex flex-col'>

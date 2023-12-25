@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { AspectRatio } from '../../ @/components/ui/aspect-ratio';
 
 const Hero = () => {
   return (
@@ -17,9 +18,14 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className='w-full md:w-[50%]'>
-        <Image src="/pic.jpg" width={391} height={407} alt='code' />
-      </div>
+      <AspectRatio ratio={16 / 9} className="bg-muted">
+      <Image
+        src="/pic.jpg"
+        alt="Hero Image"
+        fill
+        className="rounded-md object-cover"
+      />
+    </AspectRatio>
     </section>
   );
 };

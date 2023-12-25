@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { type UnsplashPhoto } from '../../types';
+import { AspectRatio } from '../../ @/components/ui/aspect-ratio';
 
 const CommunityUpdates = async() => {
 const randomPhotos: UnsplashPhoto[] = await getUnsplashRandomPhotos(3);
@@ -30,15 +31,10 @@ type UpdateCardProps = {
 const UpdateCard = ({ data }: UpdateCardProps) => {
   return (
     <div className='border h-[378px] p-3 w-full md:w-[368px] text-card-foreground flex flex-col max-w-sm bg-white rounded-xl shadow-md overflow-hidden md:max-w-md m-4'>
-      <div className='h-[200px] rounded-t-md overflow-hidden'>
-        <Image
-          src={data.urls.regular}
-          height={200}
-          width={368}
-          alt={data.alt_description}
-          layout="responsive"
-          objectFit="cover"
-        />
+      <div className='h-[200px] rounded-t-md overflow-auto'>
+      <AspectRatio ratio={4 / 3}>
+    <Image src={data.urls.regular} alt="Image"height={200} width={500} className="rounded-md object-cover" />
+  </AspectRatio>
       </div>
       <div className='h-[178px] flex flex-col items-center justify-center'>
         <p className='text-center font-semibold mt-6'>
