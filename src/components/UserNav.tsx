@@ -8,8 +8,8 @@ const UserNav = () => {
     return (
         <DropdownMenu >
             <DropdownMenuTrigger>
-                <div className='w-[50px] h-full'><Avatar >
-                    <AvatarImage src="" sizes='small' />
+                <div className='w-[50px] h-full'><Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar></div>
             </DropdownMenuTrigger>
