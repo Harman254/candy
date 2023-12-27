@@ -1,14 +1,14 @@
 "use client"
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from "next/navigation"
 
 import { Button } from '../../ @/components/ui/button';
-import { User } from 'lucide-react';
 import UserNav from './UserNav';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const user = true;
+  const user = false
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -18,6 +18,18 @@ const Navbar = () => {
     { path: '/contact', label: 'Contact' },
   ];
 
+  const router = useRouter()
+
+  const LoginButtonClick = () => {
+    router.push("/login")
+    setIsMenuOpen(false)
+
+  }
+
+  const signUpButtonclick = () => {
+    router.push("/signup")
+    setIsMenuOpen(false)
+  }
   return (
     <nav className="bg-white  shadow-md">
       <div className="max-w-6xl mx-auto px-4">
@@ -60,7 +72,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex overflow-hidden space-x-4 items-center">
+            <button>
+              {user ? (<UserNav />) : null}
+            </button>
             <button
               className="outline-none mobile-menu-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -81,8 +96,8 @@ const Navbar = () => {
 
           {/* Auth Links */}
           <div className="hidden space-x-4 md:flex">
-            {user ? (<UserNav />) : (<><Button variant="outline" className='hover:bg-primary hover:text-white transition-all duration-300 ease-in-out'>Log In</Button>
-              <Button className='text-white hover:bg-primary/70'>Sign Up</Button></>)}
+            {user ? (<UserNav />) : (<><Button variant="outline" onClick={LoginButtonClick} className='hover:bg-primary hover:text-white transition-all duration-300 ease-in-out'>Log In</Button>
+              <Button onClick={signUpButtonclick} className='text-white hover:bg-primary/70'>Sign Up</Button></>)}
           </div>
         </div>
 
@@ -103,11 +118,16 @@ const Navbar = () => {
           ))}
 
           <div className="mt-4 flex flex-col gap-4">
-            <Button variant="outline" onClick={() => setIsMenuOpen(false)}>
-              Log In
-            </Button>
-
-            <Button onClick={() => setIsMenuOpen(false)}>Sign Up</Button>
+            {user ? (
+              null
+            ) : (
+              <>
+                <Button variant="outline" onClick={LoginButtonClick}>
+                  Log In
+                </Button>
+                <Button onClick={signUpButtonclick}>Sign Up</Button>
+              </>
+            )}
           </div>
         </div>
       </div>

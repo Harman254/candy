@@ -31,7 +31,7 @@ type UpdateCardProps = {
 const UpdateCard = ({ data }: UpdateCardProps) => {
   return (
     <div className='border h-[378px] p-3 w-full md:w-[368px] text-card-foreground flex flex-col max-w-sm bg-white rounded-xl shadow-md overflow-hidden md:max-w-md m-4'>
-      <div className='md:max-w-full'>
+      <div className='md:max-w-full overflow-auto'>
           <Image src={data.urls.regular} alt="Image" width={400} height={300} loading='lazy' className="rounded-md overflow-y-hidden object-cover" />
       </div>
       <div className=' flex flex-col mb-6 items-center justify-center'>
