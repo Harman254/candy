@@ -49,6 +49,6 @@ export const AchievementStats = [
         id:4,
         icon: BadgeDollarSign,
         title:"Payments",
-        value: 7867458654
+        value: 786745
     },
 ]

@@ -18,7 +18,7 @@ const CommunityCard = ({ item }: CommunityCardProps) => {
   });
 
   return (
-    <div className='h-[260px] w-[299px] flex flex-col items-center m-5'>
+    <div className='h-[260px] w-[299px] flex flex-col items-center mt-8'>
       <div className='h-[80px] w-[80px] flex items-center justify-center bg-[#F0F4F8] rounded-full'>
         {iconElement}
       </div>

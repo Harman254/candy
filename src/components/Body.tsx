@@ -9,11 +9,11 @@ import SectionTitle from './SectionTitle'
 const Body = () => {
   return (
     <section>
-        <Unlock />
-        <Achievements />
-        <Calender />
+        {/* <Unlock /> */}
+        {/* <Achievements /> */}
+        {/* <Calender /> */}
         <Customers />
-        <SectionTitle />
+        {/* <SectionTitle /> */}
         <CommunityUpdates />
         
     </section>

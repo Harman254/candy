@@ -5,20 +5,18 @@ import { AspectRatio } from '../../ @/components/ui/aspect-ratio';
 
 const Unlock = () => {
   return (
-    <div className='flex flex-col-reverse md:flex-row h-auto md:h-[433px] mt-10 md:mt-20 mb-10 md:mb-20 px-5 md:px-20'>
-      <div className='h-[268px] md:h-[433px] w-full md:w-[442px]'>
-      <AspectRatio ratio={4 / 3}>
-    <Image src="/pic_4.jpg" alt="Image" width={402} height={402} className="rounded-md object-cover" />
-  </AspectRatio>
+    <div className='flex flex-col  justify-center items-center gap-6  md:flex-row container mx-auto '>
+      <div className='md:max-w-full'>
+          <Image src="/pic_4.jpg" alt="Image" width={400} height={300} loading='lazy' className="rounded-md object-cover" />
       </div>
-      <div className='h-auto md:h-[268px] w-full md:w-[661px] flex flex-col items-center md:items-start justify-center space-y-4 md:pl-10'>
-        <h1 className='text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-center md:text-left'>
+      <div className=' w-full flex flex-col md:items-start items-center leading-none justify-center space-y-4 '>
+        <h1 className='text-step-4 mt-4 font-bold tracking-tight'>
           The unseen of spending three years at Pixelgrade
         </h1>
-        <p className='text-sm md:text-base leading-7 mt-2 md:mt-6 text-center md:text-left'>
+        <p className='text-step-0 text-gray-500'>
           Embarking on a journey with Pixelgrade isn&apos;t just a commitment; it&apos;s an immersion into a culture of innovation, growth, and unwavering dedication. Over the past three years, our team at Pixelgrade has been crafting not just solutions but experiences that redefine the digital landscape.
         </p>
-        <Button className='bg-primary px-4 rounded-none py-2 mt-5 text-white'>Learn More</Button>
+        <Button className='bg-primary px-5 rounded-none py-3 mt-5 text-white'>Learn More</Button>
       </div>
     </div>
   );
