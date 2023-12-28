@@ -5,7 +5,7 @@ import { AspectRatio } from '../../ @/components/ui/aspect-ratio';
 
 const Calender = () => {
   return (
-    <section className='flex flex-col  justify-center items-center gap-8  md:flex-row container mx-auto '>
+    <section className='flex flex-col  justify-center items-center gap-8   md:flex-row container mx-auto '>
       <div className='md:max-w-full '>
         <Image src="/pic_3.jpg" alt="Image" width={433} height={433} className="rounded-md object-cover" />
       </div>

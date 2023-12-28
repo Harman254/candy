@@ -14,8 +14,8 @@ const Customers = () => {
         <div className='h-[100vh] justify-center  items-center flex flex-col'>
 
 
-          <div><p className='text-step-0 mt-4'>
-            At Nexcent, we take pride in our commitment to excellence and are honored to have had the opportunity to collaborate with some of the world&#39;s leading Fortune 500 companies. Our partnerships with these industry giants reflect the trust they place in our services and the value we bring to the table.
+          <div><p className='text-step-0 italic mt-4'>
+            &ldquo;At Nexcent, we take pride in our commitment to excellence and are honored to have had the opportunity to collaborate with some of the world&#39;s leading Fortune 500 companies. Our partnerships with these industry giants reflect the trust they place in our services and the value we bring to the table.	&ldquo;
           </p>
             <h2 className='font-semibold text-primary text-step-1'>
               Tim Fold

@@ -1,13 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
 import { Button } from '../../ @/components/ui/button';
-import { AspectRatio } from '../../ @/components/ui/aspect-ratio';
 
 const Unlock = () => {
   return (
     <div className='flex flex-col  justify-center items-center gap-6  md:flex-row container mx-auto '>
       <div className='md:max-w-full'>
-          <Image src="/pic_4.jpg" alt="Image" width={400} height={300} loading='lazy' className="rounded-md object-cover" />
+        <Image src="/pic_4.jpg" alt="Image" width={400} height={300} loading='lazy' className="rounded-md object-cover" />
       </div>
       <div className=' w-full flex flex-col md:items-start items-center leading-none justify-center space-y-4 '>
         <h1 className='text-step-4 mt-4 font-bold tracking-tight'>

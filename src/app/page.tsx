@@ -11,7 +11,7 @@ import Unlock from "@/components/Unlock";
 
 export default function Home() {
   return (
-    <main className="container space-y-16 mx-auto min-h-screen">
+    <main className="container  space-y-4 mx-auto min-h-screen">
       <Hero />
       <Clients />
       <Community />
@@ -22,7 +22,7 @@ export default function Home() {
       <SectionTitle />
       <CommunityUpdates />
       <FooterTitle />
-      
+
     </main>
   )
 }

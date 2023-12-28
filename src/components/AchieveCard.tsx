@@ -20,8 +20,8 @@ const AchieveCard = ({ item }: AchieveCardProps) => {
         {IconElement}
       </div>
       <div className='flex flex-col'>
-        <h3 className='font-bold text-lg md:text-2xl text-gray-800'>{value}</h3>
-        <p className='text-sm md:text-normal text-gray-500'>{title}</p>
+        <h3 className='font-bold text-lg md:text-2xl text-muted'>{value}</h3>
+        <p className='text-sm md:text-normal text-muted-foreground'>{title}</p>
       </div>
     </div>
   );

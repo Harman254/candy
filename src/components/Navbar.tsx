@@ -2,13 +2,20 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from "next/navigation"
+import { useSession } from '@supabase/auth-helpers-react';
 
 import { Button } from '../../ @/components/ui/button';
 import UserNav from './UserNav';
+import { DarkModeButton } from './Darkmode';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const user = false
+
+  const session = useSession();
+  console.log(session)
+
+  const user = session?.user?.email
+  console.log(user)
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -31,7 +38,7 @@ const Navbar = () => {
     setIsMenuOpen(false)
   }
   return (
-    <nav className="bg-white  shadow-md">
+    <nav className="  shadow-md">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className=" items-center py-4 px-2">
@@ -57,6 +64,12 @@ const Navbar = () => {
               </svg>
             </Link>
           </div>
+          <div>
+            <DarkModeButton />
+
+          </div>
+
+
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center space-x-4">
@@ -64,7 +77,7 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 href={link.path}
-                className="py-4 px-2 text-gray-900 font-semibold hover:text-primary transition duration-300"
+                className="py-4 px-2 text-muted-foreground font-semibold hover:text-primary transition duration-300"
               >
                 {link.label}
               </Link>
@@ -73,6 +86,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex overflow-hidden space-x-4 items-center">
+            <DarkModeButton />
             <button>
               {user ? (<UserNav />) : null}
             </button>

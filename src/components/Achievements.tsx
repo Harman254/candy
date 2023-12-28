@@ -5,7 +5,7 @@ import { AchievementStats } from '@/lib/index.com';
 
 const Achievements = () => {
   return (
-    <section className='py-10 px-4 md:px-10 lg:px-20 xl:px-32 flex flex-col items-center bg-slate-200'>
+    <section className='py-10 px-4 md:px-10 lg:px-20 xl:px-32 flex flex-col items-center'>
       <div className='w-full md:w-[540px] lg:w-[640px] xl:w-[800px] mb-6 md:mb-8'>
         <h2 className='font-bold text-step-3 text-center'>
           Helping a local <span className='text-green-500'>business reinvent itself</span>
